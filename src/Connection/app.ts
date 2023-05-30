@@ -1,6 +1,7 @@
 import { DataSource } from 'typeorm'
 import { Comidas } from '../Entities/Camidas'
 import { DB } from '../config'
+import { Usuario } from '../Entities/Usuario'
 
 export const Connection = new DataSource({
     type: 'postgres',
@@ -9,7 +10,7 @@ export const Connection = new DataSource({
     host: DB.host,
     port: Number(DB.port),
     database: DB.database,
-    entities: [Comidas],
+    entities: [Comidas, Usuario],
     synchronize: true,
     logging: true
 })
